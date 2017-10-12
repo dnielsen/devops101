@@ -27,8 +27,7 @@ Then ?
 source env/bin/activate
 ```
 
-After that, you can install all the  packages this project will need with
-this command:
+This document provides detailed, step-by-step instructions on creating a new AWS EC2 instance and deploying a provided Symfony2 application on it using LAMP (Linux, Apache, MySQL, PHP) stack. The application also uses a separate Redis database for certain parts of it, but the connection to Redis is not included in these instructions. These instructions are detailed for use with Mac OS; however, once logged onto the virtual machine provided by your EC2, the instructions are universal. The provided application is a website call “Spoutlet” and it will be cloned from an online github repository.
 
 ```bash
 pip install -r requirements.txt
