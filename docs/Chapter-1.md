@@ -15,8 +15,8 @@ This document provides detailed, step-by-step instructions on creating a new AWS
 1. Click on “Launch Instance”
 1. Select “Ubuntu Server 16.04...”
 1. Select the t2.medium size instance - VERY IMPORTANT
-  1. click Next until you reach “Step 6: Configure Security Groups”
-    1. Or Click on the “Step 6: Configure Security Groups” tab, located along the top of the screen.
+   1. click Next until you reach “Step 6: Configure Security Groups”
+   1. Or Click on the “Step 6: Configure Security Groups” tab, located along the top of the screen.
 1. Change “security group name” to “spoutlet - sample deployment”
 1. Click “Add Rule”
 - *Add “Custom TCP Rule” with Port Range = 8000
