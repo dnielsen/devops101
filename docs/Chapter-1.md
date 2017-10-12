@@ -36,3 +36,9 @@ This document provides detailed, step-by-step instructions on creating a new AWS
 
 
 ...
+
+http://bit.ly/2fTJxQ8 - automatic!
+[DevOps](http://http://bit.ly/2fTJxQ8)
+
+http://github.com - automatic!
+[GitHub](http://github.com)
