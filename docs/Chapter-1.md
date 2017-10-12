@@ -2,7 +2,9 @@
 
 Before we ?
 
-## ?
+## Sign up for AWS Free Tier 
+Sign up for Free Cloud Services – AWS Free Tier https://aws.amazon.com/free/
+“AWS Free Tier includes offers that expire 12 months following sign up and others that never expire.”
 
 Let's jump right in! :raised_hands:
 
