@@ -19,19 +19,19 @@ This document provides detailed, step-by-step instructions on creating a new AWS
    1. Or Click on the “Step 6: Configure Security Groups” tab, located along the top of the screen.
 1. Change “security group name” to “spoutlet - sample deployment”
 1. Click “Add Rule”
-- *Add “Custom TCP Rule” with Port Range = 8000
-- *Change “Source” drop down menu to “Anywhere”
-- *Add “Custom TCP Rule” with Port Range = 0
-- *Change “Source” drop down menu to “Anywhere”
-- f) Click “Add Rule”
-- *Add “HTTP”
-- *Change “Source” drop down menu to “Anywhere”
-- g) Click “Review and Launch”, then review settings and click “Launch”
-- h) A pop up window will appear asking about a security key
-- *Select “Create a new key pair” from the first drop down box
-- *Enter “spoutlet_sampleEC2” for the key pair name, then “Download Key Pair”
-- ***IMPORTANT*: after downloading the key, place it in a safe and accessible place (perhaps create a backup copy and store it in the cloud); if lost, your key cannot be replaced, as AWS does not store your key after its creation
-- i) After storing your key in a safe and secure location, click “Launch Instances”
+   1. Add “Custom TCP Rule” with Port Range = 8000
+   1. Change “Source” drop down menu to “Anywhere”
+   1. Add “Custom TCP Rule” with Port Range = 0
+   1. Change “Source” drop down menu to “Anywhere”
+1. Click “Add Rule”
+   1. Add “HTTP”
+   1. Change “Source” drop down menu to “Anywhere”
+1. Click “Review and Launch”, then review settings and click “Launch”
+1. A pop up window will appear asking about a security key
+   1. Select “Create a new key pair” from the first drop down box
+   1. Enter “spoutlet_sampleEC2” for the key pair name, then “Download Key Pair”
+   ***IMPORTANT*: after downloading the key, place it in a safe and accessible place (perhaps create a backup copy and store it in the cloud); if lost, your key cannot be replaced, as AWS does not store your key after its creation
+1. After storing your key in a safe and secure location, click “Launch Instances”
 
 
 
