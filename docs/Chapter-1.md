@@ -6,28 +6,12 @@ Before we ?
 Sign up for Free Cloud Services – AWS Free Tier https://aws.amazon.com/free/
 “AWS Free Tier includes offers that expire 12 months following sign up and others that never expire.”
 
-Let's jump right in! :raised_hands:
-
-?
-
-###### Here's a list of what we'll need:
-
-- **[Python](https://www.python.org/downloads/)**, the programming language we're
-going to use.
-- **?
-
-After you’ve installed Python, pip, ngrok and virtualenv you’ll need to ?
+## Create AWS EC2 instance
+a) Log into AWS console and select “Services” > “EC2”
+b) Click on “Instances”
 
 
-```bash
-virtualenv env
-```
 
-Then ?
-
-```bash
-source env/bin/activate
-```
 
 This document provides detailed, step-by-step instructions on creating a new AWS EC2 instance and deploying a provided Symfony2 application on it using LAMP (Linux, Apache, MySQL, PHP) stack. The application also uses a separate Redis database for certain parts of it, but the connection to Redis is not included in these instructions. These instructions are detailed for use with Mac OS; however, once logged onto the virtual machine provided by your EC2, the instructions are universal. The provided application is a website call “Spoutlet” and it will be cloned from an online github repository.
 
