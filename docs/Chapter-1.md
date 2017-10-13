@@ -64,7 +64,7 @@ This document provides detailed, step-by-step instructions on creating a new AWS
      - You will be asked if you are sure you want to continue, type “yes” and hit enter
     - You should now be connected to your EC2 instance via a Virtual Machine in your terminal window (your username in the terminal window should now be “ubuntu@ip-*your-ip*”)
     
-    
+### Install php and composer
 1. Install php and composer
    - Install composer by pasting the following line into your terminal and pressing enter:
      - sudo apt-get update
@@ -118,7 +118,7 @@ echo "Index Page for Apache Server";
 
 ?>
 ```
-
+### Install phpMyAdmin for MySQL GUI
 1. Install phpMyAdmin for MySQL GUI
    - Type “sudo apt-get update” on command line and hit enter
    - Type “sudo apt-get install phpmyadmin” and hit enter
