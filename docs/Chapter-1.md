@@ -71,6 +71,14 @@ https://docs.google.com/document/d/1dKerau5K38A8iIsPBdc2c8Eg9uXMaTRLIUDICKKuOSY/
      - Launch virtual machine via ssh by typing “ssh -i "spoutlet_sampleEC2.pem" ubuntu@*your-instance*.compute.amazonaws.com” on command line and hit enter . You can copy the above line under “example” from the “Connect to your instance” pop up window on your aws console and paste it in your terminal
      - You will be asked if you are sure you want to continue, type “yes” and hit enter
     - You should now be connected to your EC2 instance via a Virtual Machine in your terminal window (your username in the terminal window should now be “ubuntu@ip-*your-ip*”)
+    
+    
+1. Install php and composer
+   - Install composer by pasting the following line into your terminal and pressing enter:
+     - sudo apt-get update
+     - sudo apt-get install php 
+     - sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
 
 
 
