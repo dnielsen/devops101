@@ -110,5 +110,20 @@ https://docs.google.com/document/d/1dKerau5K38A8iIsPBdc2c8Eg9uXMaTRLIUDICKKuOSY/
       - Paste it into a web browser URL and hit enter, you should be directed to and Apache2 Ubuntu Default Page and prints the message “It works!”, followed by other configuration information
    - Navigate to “/var/www/html” and replace “index.html” with a new file named “index.php” and paste in this code:
 
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Index</title>
+</head>
+<body>
+        <h1>Index</h1>
+</body>
+</html>
+
+<?php
+
+echo "Index Page for Apache Server";
+
+?>
 
 
