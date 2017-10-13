@@ -127,3 +127,44 @@ echo "Index Page for Apache Server";
 ?>
 ```
 
+1. Install phpMyAdmin for MySQL GUI
+   - Type “sudo apt-get update” on command line and hit enter
+   - Type “sudo apt-get install phpmyadmin” and hit enter
+      - Type y and press enter when asked if you would like to continue
+      - When prompted to choose a web server for reconfiguration, choose apache2 and hit enter
+      - When asked whether you would like configure database for phpmyadmin with dbconfig-common, select yes and hit enter
+      - Create a password for phpmyadmin (Use the same one as your mysql password for root user) and hit enter, then confirm password
+   - Allow for apache access to phpmyadmin
+      - Type “sudo vim /etc/apache2/apache2.conf” (or you can use a different text editor if you would like)  and hit enter
+      - At the end of the file, create a new line and type “Include /etc/phpmyadmin/apache.conf”
+      - Save and exit
+   - Restart apache by typing “sudo systemctl restart apache2”
+   - Test that all is working by returning to the browser page where you tested Apache connection (step 5e), and adding “/phpmyadmin” to the end of the URL.  
+      - For example: http://ec2-13-56-200-209.us-west-1.compute.amazonaws.com/phpmyadmin
+      - You should be redirected to a login page where you can login with username “root” and the password you created in step 6b, then login and you will be able to view a GUI of your MySQL Databases
+1. Import MySQL Database into phpmyadmin
+   - On your phpmyadmin GUI, create a new database and and name it “Spoutlet”
+   - Download   (ftp or with github) the file “spoutlet2.sql” from this drive folder...
+ https://drive.google.com/drive/folders/0B_d8yXBizlAEaE9CNXdVWC1nSDg 
+   - Return to your phpmyadmin page and open the “Spoutlet” database
+   - Click “import”, and then “choose file”
+      - Select the “spoutlet2.sql” file you downloaded and then finish the import by scrolling down and clicking “Go”
+      - Results: Import has been successfully finished, 33 queries executed. (spoutlet2.sql)
+   - Your “Spoutlet” database should now be populated with 6 tables (“comments”, “events”, “fos_user”, “home”, “sessions”, “submission”), each with data in them already
+   - Return to your terminal window for the next step
+   
+
+
+
+
+
+
+
+
+      
+      
+
+      
+      
+      
+
