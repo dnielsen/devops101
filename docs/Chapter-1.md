@@ -66,12 +66,11 @@ https://docs.google.com/document/d/1dKerau5K38A8iIsPBdc2c8Eg9uXMaTRLIUDICKKuOSY/
       1. Note
          1. A passphrase on a private key is an extra layer of protection, so even if your private key is discovered, it can't be used without the passphrase. The downside to using a passphrase is that it makes automation harder because human intervention is needed to log on to an instance, or copy files to an instance                    
        1. Specify the same name for the key that you used for the key pair (for example, my-key-pair). PuTTY automatically adds the .ppk file extension. Your private key is now in the correct format for use with PuTTY. You can now connect to your instance using PuTTY's SSH client.
-       1. Open a terminal window and navigate into the directory where you placed your “spoutlet_sampleEC2.pem” key (downloaded in step 2h)
-       1. Add privacy restrictions to your key by typing “chmod 400 spoutlet_sampleEC2.pem” on command line and hit enter
-       1. Launch virtual machine via ssh by typing “ssh -i "spoutlet_sampleEC2.pem" ubuntu@*your-instance*.compute.amazonaws.com” on command line and hit enter 
-You can copy the above line under “example” from the “Connect to your instance” pop up window on your aws console and paste it in your terminal
-       1. You will be asked if you are sure you want to continue, type “yes” and hit enter
-       1. You should now be connected to your EC2 instance via a Virtual Machine in your terminal window (your username in the terminal window should now be “ubuntu@ip-*your-ip*”)
+    1. Open a terminal window and navigate into the directory where you placed your “spoutlet_sampleEC2.pem” key (downloaded in step 2h)
+    1. Add privacy restrictions to your key by typing “chmod 400 spoutlet_sampleEC2.pem” on command line and hit enter
+    1. Launch virtual machine via ssh by typing “ssh -i "spoutlet_sampleEC2.pem" ubuntu@*your-instance*.compute.amazonaws.com” on command line and hit enter . You can copy the above line under “example” from the “Connect to your instance” pop up window on your aws console and paste it in your terminal
+    1. You will be asked if you are sure you want to continue, type “yes” and hit enter
+    1. You should now be connected to your EC2 instance via a Virtual Machine in your terminal window (your username in the terminal window should now be “ubuntu@ip-*your-ip*”)
 
 
 
