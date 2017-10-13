@@ -79,6 +79,36 @@ https://docs.google.com/document/d/1dKerau5K38A8iIsPBdc2c8Eg9uXMaTRLIUDICKKuOSY/
      - sudo apt-get install php 
      - sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
+1. Install Apache, MySQL, PHP on your Linux instance
+   - Install Apache
+     - Type “sudo apt-get update” and hit enter
+     - Type “sudo apt-get install apache2” and hit enter
+     - Type “y” and hit enter when you are asked if you would like to continue
+     - To make sure everything is working, type “apache2ctl configtest” on the command line and hit enter
+     - You should get an output of “Syntax OK”
+     - Check that your firewall allows web traffic from HTTP and HTTPS
+     - Type  sudo ufw app info "Apache Full" and hit enter
+     - Your output should show 80 and 443 under “Ports:” at the bottom of output
+   - Install MySQL
+      - Type “sudo apt-get install mysql-server”
+      - Type “y” and hit enter when asked if you would like to continue
+      - You will be prompted to create a password for the MySQL root user, choose a password that you will remember and hit enter, then repeat it and hit enter
+      - Run secure install to improve security and other settings
+      - Type “sudo mysql_secure_installation”
+      - Enter the password for “root” you chose earlier
+      - For “VALIDATE PASSWORD PLUGIN”: type n and press enter
+      - “Change the password for root?” type n and press enter
+      - “Remove anonymous users?” type y and press enter
+      - “Disallow root login remotely?” type n and press enter
+      - “Remove test database and access to it?” type n and press enter
+      - “Reload privilege tables now?” type y and press enter
+   - Install PHP
+      - Type “sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql” and hit enter
+    - Restart apache by typing “sudo systemctl restart apache2” and hit enter
+    - Test that you have successfully installed LAMP
+      - Copy your instance’s “Public DNS” from the aws console (should look something like “ec2-54-183-158-228.us-west-1.compute.amazonaws.com”)
+      - Paste it into a web browser URL and hit enter, you should be directed to and Apache2 Ubuntu Default Page and prints the message “It works!”, followed by other configuration information
+   - Navigate to “/var/www/html” and replace “index.html” with a new file named “index.php” and paste in this code:
 
 
 
