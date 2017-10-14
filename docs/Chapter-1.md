@@ -32,6 +32,7 @@ This document provides detailed, step-by-step instructions on creating a new AWS
    - Enter “spoutlet_sampleEC2” for the key pair name, then “Download Key Pair”
      - IMPORTANT*: after downloading the key, place it in a safe and accessible place (perhaps create a backup copy and store it in the cloud); if lost, your key cannot be replaced, as AWS does not store your key after its creation
 1. After storing your key in a safe and secure location, click “Launch Instances”
+###  Update Folder Permissions
 
 ## Connect* to Instance from AWS console
 1. After launching instance, return to running instances by clicking on “Services” > “EC2”
