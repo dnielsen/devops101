@@ -144,6 +144,12 @@ echo "Index Page for Apache Server";
       - Results: Import has been successfully finished, 33 queries executed. (spoutlet2.sql)
    - Your “Spoutlet” database should now be populated with 6 tables (“comments”, “events”, “fos_user”, “home”, “sessions”, “submission”), each with data in them already
    - Return to your terminal window for the next step
+1. Clone Spoutlet Github Repository on Instance  
+   - Navigate to Apache’s default web page directory by typing “cd /var/www” and pressing enter
+   - Return to the spoutlet2 github repository from step 7b (you will need a github account for the next step, create one if you don’t already have one)
+   - On the repository, click the green “Clone of download” button and copy the given url
+   - Return to your terminal window, you should still be navigated into the folder “/var/www”
+
    
 
 
