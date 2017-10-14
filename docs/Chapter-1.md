@@ -156,11 +156,10 @@ echo "Index Page for Apache Server";
 ``` 
 sudo git clone https://github.com/dnielsen/spoutlet2.git 
 ```
-      - Enter your github user information to finish cloning the repository
+Enter your github user information to finish cloning the repository
    1. After cloning the repository, type “ls” and hit enter, there should now be a “spoutlet2” directory present within /var/www
    1. Navigate into the new project directory by typing “cd spoutlet2” and hitting enter
    1. We will not be needing the “spoutlet2.sql” file, so delete it by typing “sudo rm spoutlet2.sql” and hitting enter
-
 ## Update Folder Permissions
 1. Type “sudo setfacl -R -m u:www-data:rX spoutlet2” and hit enter
 1. Type “sudo setfacl -R -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
