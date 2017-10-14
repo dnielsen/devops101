@@ -32,7 +32,7 @@ This document provides detailed, step-by-step instructions on creating a new AWS
    - Enter “spoutlet_sampleEC2” for the key pair name, then “Download Key Pair”
      - IMPORTANT: after downloading the key, place it in a safe and accessible place (perhaps create a backup copy and store it in the cloud); if lost, your key cannot be replaced, as AWS does not store your key after its creation
 1. After storing your key in a safe and secure location, click “Launch Instances”
-###  Update Folder Permissions
+##  Update Folder Permissions
 1. Type “sudo setfacl -R -m u:www-data:rX spoutlet2” and hit enter
 1. Type “sudo setfacl -R -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
 1. Type “ sudo setfacl -dR -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
@@ -129,7 +129,7 @@ echo "Index Page for Apache Server";
 
 ?>
 ```
-### Install phpMyAdmin for MySQL GUI
+## Install phpMyAdmin for MySQL GUI
 1. Install phpMyAdmin for MySQL GUI
    - Type “sudo apt-get update” on command line and hit enter
    - Type “sudo apt-get install phpmyadmin” and hit enter
@@ -155,7 +155,7 @@ echo "Index Page for Apache Server";
       - Results: Import has been successfully finished, 33 queries executed. (spoutlet2.sql)
    - Your “Spoutlet” database should now be populated with 6 tables (“comments”, “events”, “fos_user”, “home”, “sessions”, “submission”), each with data in them already
    - Return to your terminal window for the next step
-### Clone Spoutlet Github Repository on Instance  
+## Clone Spoutlet Github Repository on Instance  
    1. Navigate to Apache’s default web page directory by typing “cd /var/www” and pressing enter
    1. Return to the spoutlet2 github repository from step 7b (you will need a github account for the next step, create one if you don’t already have one)
    1. On the repository, click the green “Clone of download” button and copy the given url
@@ -169,6 +169,11 @@ sudo git clone https://github.com/dnielsen/spoutlet2.git
    1. Navigate into the new project directory by typing “cd spoutlet2” and hitting enter
    1. We will not be needing the “spoutlet2.sql” file, so delete it by typing “sudo rm spoutlet2.sql” and hitting enter
 
+## Update Folder Permissions
+1. Type “sudo setfacl -R -m u:www-data:rX spoutlet2” and hit enter
+1. Type “sudo setfacl -R -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
+1. Type “ sudo setfacl -dR -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
+1. Type “export SYMFONY_ENV=prod” and hit enter
 
    
 
