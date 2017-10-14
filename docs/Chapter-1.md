@@ -30,27 +30,24 @@ This document provides detailed, step-by-step instructions on creating a new AWS
 1. A pop up window will appear asking about a security key
    - Select “Create a new key pair” from the first drop down box
    - Enter “spoutlet_sampleEC2” for the key pair name, then “Download Key Pair”
-     - IMPORTANT: after downloading the key, place it in a safe and accessible place (perhaps create a backup copy and store it in the cloud); if lost, your key cannot be replaced, as AWS does not store your key after its creation
+   - IMPORTANT: after downloading the key, place it in a safe and accessible place (perhaps create a backup copy and store it in the cloud); if lost, your key cannot be replaced, as AWS does not store your key after its creation
 1. After storing your key in a safe and secure location, click “Launch Instances”
 ##  Update Folder Permissions
 1. Type “sudo setfacl -R -m u:www-data:rX spoutlet2” and hit enter
 1. Type “sudo setfacl -R -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
 1. Type “ sudo setfacl -dR -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
 1. Type “export SYMFONY_ENV=prod” and hit enter
-###  Update Spoutlet Project Requirements
+##  Update Spoutlet Project Requirements
 1. Open and edit the file “app/AppKernel.php” in the spoutlet2 directory
-```cd spoutlet2
-sudo vi app/AppKernel.php ```
+> cd spoutlet2
+> sudo vi app/AppKernel.php
   - and comment out the line “$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();” by adding two forward slashes in front of it  (“//”)
-1. 
-
 ## Connect* to Instance from AWS console
 1. After launching instance, return to running instances by clicking on “Services” > “EC2”
 1. Click on “Instances”
    - You should see your deployed instance with “Initializing” status under “Status Checks”
    - Rename the instance to “Spoutlet Sample”
 1. Select your instance and click “Connect”, this should launch a pop up window with instructions
-
 ## Connect to Instance from Terminal
 1. With Terminal  / MacOS, From Termnal: 
    - chmod 400 spoutlet.publickey
@@ -73,15 +70,13 @@ sudo vi app/AppKernel.php ```
      - Add privacy restrictions to your key by typing “chmod 400 spoutlet_sampleEC2.pem” on command line and hit enter
      - Launch virtual machine via ssh by typing “ssh -i "spoutlet_sampleEC2.pem" ubuntu@*your-instance*.compute.amazonaws.com” on command line and hit enter . You can copy the above line under “example” from the “Connect to your instance” pop up window on your aws console and paste it in your terminal
      - You will be asked if you are sure you want to continue, type “yes” and hit enter
-    - You should now be connected to your EC2 instance via a Virtual Machine in your terminal window (your username in the terminal window should now be “ubuntu@ip-*your-ip*”)
-    
+    - You should now be connected to your EC2 instance via a Virtual Machine in your terminal window (your username in the terminal window should now be “ubuntu@ip-*your-ip*”)2ws    
 ### Install php and composer
 1. Install php and composer
    - Install composer by pasting the following line into your terminal and pressing enter:
      - sudo apt-get update
      - sudo apt-get install php 
      - sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-
 1. Install Apache, MySQL, PHP on your Linux instance
    - Install Apache
      - Type “sudo apt-get update” and hit enter
@@ -112,7 +107,7 @@ sudo vi app/AppKernel.php ```
       - Copy your instance’s “Public DNS” from the aws console (should look something like “ec2-54-183-158-228.us-west-1.compute.amazonaws.com”)
       - Paste it into a web browser URL and hit enter, you should be directed to and Apache2 Ubuntu Default Page and prints the message “It works!”, followed by other configuration information
       - Navigate to “/var/www/html” and replace “index.html” with a new file named “index.php” and paste in this code:
-```
+>
 <!DOCTYPE html>
 <html>
 <head>
@@ -122,13 +117,9 @@ sudo vi app/AppKernel.php ```
         <h1>Index</h1>
 </body>
 </html>
-
 <?php
-
 echo "Index Page for Apache Server";
-
 ?>
-```
 ## Install phpMyAdmin for MySQL GUI
 1. Install phpMyAdmin for MySQL GUI
    - Type “sudo apt-get update” on command line and hit enter
