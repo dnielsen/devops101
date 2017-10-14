@@ -166,6 +166,65 @@ sudo git clone https://github.com/dnielsen/spoutlet2.git
 1. Type “sudo setfacl -R -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
 1. Type “ sudo setfacl -dR -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
 1. Type “export SYMFONY_ENV=prod” and hit enter
+## Update Spoutlet Project Requirements
+1. Open and edit the file “app/AppKernel.php” in the spoutlet2 directory
+   - cd spoutlet2
+   - sudo vi app/AppKernel.php
+   - and comment out the line “$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();” by adding two forward slashes in front of it  (“//”)
+1. Update composer
+   - Type “sudo composer install --no-dev --optimize-autoloader” and hit enter, this can take up to a few minutes
+   - For all parameters, leave them blank and hit enter to accept the default, except for these:
+   - For “database_name” enter “Spoutlet”
+   - For “database_password” enter the password you created in step 6b
+   - For “mailer_transport” enter “gmail”
+   - For “mailer_host” enter “smtp.gmail.com”
+   - For “mailer_user” enter a valid gmail email address
+   - For “mailer_password” enter the email address’ respective password
+   - For “secret” enter “afb28c899101d12f6c5074bcef2fc2d0b0fa7084kk”
+1. Ensure MySQL, phpMyAdmin, and Symfony are all communicating correctly by typing “sudo php app/console doctrine:schema:validate” and hitting enter, you should see an output verifying that the mapping and database schema are all correct 
+1. Clear cache by typing “sudo php app/console cache:clear --env=prod --no-debug” and hitting enter 
+1. Generate assets with “sudo php app/console assets:install --env=prod --no-debug”
+## Change Default Apache Path to Spoutlet Web Page
+1. Navigate to apache default path configuration by typing “cd /etc/apache2/sites-available”
+1. Type “sudo mv 000-default.conf default.bkp.conf” and hit enter
+1. Open up a new file by typing “sudo vim 000-default.conf”, then paste in this code:
+```
+<VirtualHost *:80>
+
+    DocumentRoot /var/www/spoutlet2/web
+    <Directory /var/www/spoutlet2/web>
+        AllowOverride None
+        Order Allow,Deny
+        Allow from All
+
+        <IfModule mod_rewrite.c>
+            Options -MultiViews
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^(.*)$ app.php [QSA,L]
+        </IfModule>
+    </Directory>
+
+    # uncomment the following lines if you install assets as symlinks
+    # or run into problems when compiling LESS/Sass/CoffeScript assets
+    # <Directory /var/www/project>
+    #     Options FollowSymlinks
+    # </Directory>
+
+    ErrorLog /var/log/apache2/symfony_error.log
+    CustomLog /var/log/apache2/symfony_access.log combined
+</VirtualHost>
+```
+1. Save and exit
+1. Enable module rewrite by typing “sudo a2enmod rewrite” and hitting enter
+1. Restart apache with “sudo systemctl restart apache2”
+1. Open new web page and paste in the public DNS from step 5e, you should be directed to the Spoutlet2 Home Page
+   - For example ec2-13-56-200-209.us-west-1.compute.amazonaws.com
+
+
+      
+
+
 
    
 
