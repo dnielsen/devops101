@@ -144,11 +144,20 @@ echo "Index Page for Apache Server";
       - Results: Import has been successfully finished, 33 queries executed. (spoutlet2.sql)
    - Your “Spoutlet” database should now be populated with 6 tables (“comments”, “events”, “fos_user”, “home”, “sessions”, “submission”), each with data in them already
    - Return to your terminal window for the next step
-1. Clone Spoutlet Github Repository on Instance  
-   - Navigate to Apache’s default web page directory by typing “cd /var/www” and pressing enter
-   - Return to the spoutlet2 github repository from step 7b (you will need a github account for the next step, create one if you don’t already have one)
-   - On the repository, click the green “Clone of download” button and copy the given url
-   - Return to your terminal window, you should still be navigated into the folder “/var/www”
+### Clone Spoutlet Github Repository on Instance  
+   1. Navigate to Apache’s default web page directory by typing “cd /var/www” and pressing enter
+   1. Return to the spoutlet2 github repository from step 7b (you will need a github account for the next step, create one if you don’t already have one)
+   1. On the repository, click the green “Clone of download” button and copy the given url
+   1. Return to your terminal window, you should still be navigated into the folder “/var/www”
+      - Type “sudo git clone *copied-url*” and hit enter (*url from step 8c)
+``` 
+sudo git clone https://github.com/dnielsen/spoutlet2.git 
+```
+      - Enter your github user information to finish cloning the repository
+   1. After cloning the repository, type “ls” and hit enter, there should now be a “spoutlet2” directory present within /var/www
+   1. Navigate into the new project directory by typing “cd spoutlet2” and hitting enter
+   1. We will not be needing the “spoutlet2.sql” file, so delete it by typing “sudo rm spoutlet2.sql” and hitting enter
+
 
    
 
