@@ -5,53 +5,53 @@ This document provides detailed, step-by-step instructions on creating a new AWS
 
 ## Sign up for AWS Free Tier 
 1. Sign up for Free Cloud Services – AWS Free Tier https://aws.amazon.com/free/
-1. “AWS Free Tier includes offers that expire 12 months following sign up and others that never expire.”
+1. ```AWS Free Tier includes offers that expire 12 months following sign up and others that never expire.```
 
 ## Create AWS EC2 instance
-1. Log into AWS console and select “Services” > “EC2”
-1. Click on “Instances”
+1. Log into AWS console and select ```Services``` > ```EC2```
+1. Click on ```Instances```
 
 ## Launch Instance
-1. Click on “Launch Instance”
-1. Select “Ubuntu Server 16.04...”
+1. Click on ```Launch Instance```
+1. Select ```Ubuntu Server 16.04...```
 1. Select the t2.medium size instance - VERY IMPORTANT
-   - click Next until you reach “Step 6: Configure Security Groups”
+   - click Next until you reach ```Step 6: Configure Security Groups```
    - Or Click on the “Step 6: Configure Security Groups” tab, located along the top of the screen.
 1. Change “security group name” to “spoutlet - sample deployment”
 1. Click “Add Rule”
-   - Add “Custom TCP Rule” with Port Range = 8000
-   - Change “Source” drop down menu to “Anywhere”
-   - Add “Custom TCP Rule” with Port Range = 0
-   - Change “Source” drop down menu to “Anywhere”
-1. Click “Add Rule”
-   - Add “HTTP”
-   - Change “Source” drop down menu to “Anywhere”
-1. Click “Review and Launch”, then review settings and click “Launch”
+   - Add ```Custom TCP Rule``` with ```Port Range = 8000```
+   - Change ```Source``` drop down menu to ```Anywhere```
+   - Add ```Custom TCP Rule``` with ```Port Range = 0```
+   - Change ```Source``` drop down menu to ```Anywhere```
+1. Click ```Add Rule```
+   - Add ```HTTP```
+   - Change ```Source``` drop down menu to ```Anywhere```
+1. Click ```Review and Launch```, then review settings and click “Launch”
 1. A pop up window will appear asking about a security key
-   - Select “Create a new key pair” from the first drop down box
-   - Enter “spoutlet_sampleEC2” for the key pair name, then “Download Key Pair”
+   - Select ```Create a new key pair``` from the first drop down box
+   - Enter ```spoutlet_sampleEC2``` for the key pair name, then ```Download Key Pair```
    - IMPORTANT: after downloading the key, place it in a safe and accessible place (perhaps create a backup copy and store it in the cloud); if lost, your key cannot be replaced, as AWS does not store your key after its creation
 1. After storing your key in a safe and secure location, click “Launch Instances”
 ##  Update Folder Permissions
-1. Type “sudo setfacl -R -m u:www-data:rX spoutlet2” and hit enter
-1. Type “sudo setfacl -R -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
-1. Type “ sudo setfacl -dR -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
-1. Type “export SYMFONY_ENV=prod” and hit enter
+1. Type ```sudo setfacl -R -m u:www-data:rX spoutlet2``` and hit enter
+1. Type ```sudo setfacl -R -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs``` and hit enter
+1. Type ```sudo setfacl -dR -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs``` and hit enter
+1. Type ```export SYMFONY_ENV=prod``` and hit enter
 ##  Update Spoutlet Project Requirements
-1. Open and edit the file “app/AppKernel.php” in the spoutlet2 directory
+1. Open and edit the file ```app/AppKernel.php``` in the spoutlet2 directory
 > cd spoutlet2
 > sudo vi app/AppKernel.php
-  - and comment out the line “$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();” by adding two forward slashes in front of it  (“//”)
+   - and comment out the line “$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();” by adding two forward slashes in front of it  (“//”)
 ## Connect to Instance from AWS console
-1. After launching instance, return to running instances by clicking on “Services” > “EC2”
-1. Click on “Instances”
-   - You should see your deployed instance with “Initializing” status under “Status Checks”
-   - Rename the instance to “Spoutlet Sample”
-1. Select your instance and click “Connect”, this should launch a pop up window with instructions
+1. After launching instance, return to running instances by clicking on ```Services``` > ```EC2```
+1. Click on ```Instances```
+   - You should see your deployed instance with ```Initializing``` status under ```Status Checks```
+   - Rename the instance to ```Spoutlet Sample```
+1. Select your instance and click ```Connect```, this should launch a pop up window with instructions
 ## Connect to Instance from Terminal
 1. With Terminal  / MacOS, From Termnal: 
-   - chmod 400 spoutlet.publickey
-   - ssh -i "spoutlet.pem" ubuntu@ec2-54-193-37-203.us-west-1.compute.amazonaws.com
+> chmod 400 spoutlet.publickey
+> ssh -i "spoutlet.pem" ubuntu@ec2-54-193-37-203.us-west-1.compute.amazonaws.com
 1. With PuTTY / Windows 
    - Connecting to Your Linux Instance from Windows Using PuTTY https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html 
    - Convert the .pem file to a .ppk file
@@ -66,47 +66,47 @@ This document provides detailed, step-by-step instructions on creating a new AWS
       - Note
          - A passphrase on a private key is an extra layer of protection, so even if your private key is discovered, it can't be used without the passphrase. The downside to using a passphrase is that it makes automation harder because human intervention is needed to log on to an instance, or copy files to an instance                    
        - Specify the same name for the key that you used for the key pair (for example, my-key-pair). PuTTY automatically adds the .ppk file extension. Your private key is now in the correct format for use with PuTTY. You can now connect to your instance using PuTTY's SSH client.
-1. Open a terminal window and navigate into the directory where you placed your “spoutlet_sampleEC2.pem” key (downloaded in step 2h)
-     - Add privacy restrictions to your key by typing “chmod 400 spoutlet_sampleEC2.pem” on command line and hit enter
-     - Launch virtual machine via ssh by typing “ssh -i "spoutlet_sampleEC2.pem" ubuntu@*your-instance*.compute.amazonaws.com” on command line and hit enter . You can copy the above line under “example” from the “Connect to your instance” pop up window on your aws console and paste it in your terminal
+1. Open a terminal window and navigate into the directory where you placed your ```spoutlet_sampleEC2.pem``` key (downloaded in step 2h)
+     - Add privacy restrictions to your key by typing ```chmod 400 spoutlet_sampleEC2.pem``` on command line and hit enter
+     - Launch virtual machine via ssh by typing ```ssh -i "spoutlet_sampleEC2.pem" ubuntu@*your-instance*.compute.amazonaws.com``` on command line and hit enter . You can copy the above line under ```example``` from the ```Connect to your instance``` pop up window on your aws console and paste it in your terminal
      - You will be asked if you are sure you want to continue, type “yes” and hit enter
-    - You should now be connected to your EC2 instance via a Virtual Machine in your terminal window (your username in the terminal window should now be “ubuntu@ip-*your-ip*”)2ws    
+    - You should now be connected to your EC2 instance via a Virtual Machine in your terminal window (your username in the terminal window should now be ```ubuntu@ip-*your-ip*```   
 ### Install php and composer
 1. Install php and composer
    - Install composer by pasting the following line into your terminal and pressing enter:
-     - sudo apt-get update
-     - sudo apt-get install php 
-     - sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+> sudo apt-get update
+> sudo apt-get install php 
+> sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 1. Install Apache, MySQL, PHP on your Linux instance
    - Install Apache
-     - Type “sudo apt-get update” and hit enter
-     - Type “sudo apt-get install apache2” and hit enter
-     - Type “y” and hit enter when you are asked if you would like to continue
-     - To make sure everything is working, type “apache2ctl configtest” on the command line and hit enter
-     - You should get an output of “Syntax OK”
+     - Type ```sudo apt-get update``` and hit enter
+     - Type ```sudo apt-get install apache2``` and hit enter
+     - Type ```y``` and hit enter when you are asked if you would like to continue
+     - To make sure everything is working, type ```apache2ctl configtest``` on the command line and hit enter
+     - You should get an output of ```Syntax OK```
      - Check that your firewall allows web traffic from HTTP and HTTPS
-     - Type  sudo ufw app info "Apache Full" and hit enter
-     - Your output should show 80 and 443 under “Ports:” at the bottom of output
+     - Type ```sudo ufw app info "Apache Full"``` and hit enter
+        - Your output should show 80 and 443 under ```Ports:``` at the bottom of output
    - Install MySQL
-      - Type “sudo apt-get install mysql-server”
-      - Type “y” and hit enter when asked if you would like to continue
+      - Type ```sudo apt-get install mysql-server```
+      - Type ```y``` and hit enter when asked if you would like to continue
       - You will be prompted to create a password for the MySQL root user, choose a password that you will remember and hit enter, then repeat it and hit enter
       - Run secure install to improve security and other settings
-      - Type “sudo mysql_secure_installation”
-      - Enter the password for “root” you chose earlier
-      - For “VALIDATE PASSWORD PLUGIN”: type n and press enter
-      - “Change the password for root?” type n and press enter
-      - “Remove anonymous users?” type y and press enter
-      - “Disallow root login remotely?” type n and press enter
-      - “Remove test database and access to it?” type n and press enter
-      - “Reload privilege tables now?” type y and press enter
+      - Type ```sudo mysql_secure_installation```
+      - Enter the password for ```root``` you chose earlier
+      - For ```VALIDATE PASSWORD PLUGIN```: type n and press enter
+      - ```Change the password for root?``` type n and press enter
+      - ```Remove anonymous users?``` type y and press enter
+      - ```Disallow root login remotely?``` type n and press enter
+      - ```Remove test database and access to it?``` type n and press enter
+      - ```Reload privilege tables now?``` type y and press enter
    - Install PHP
-      - Type “sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql” and hit enter
-    - Restart apache by typing “sudo systemctl restart apache2” and hit enter
+      - Type ```sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql``` and hit enter
+    - Restart apache by typing ```sudo systemctl restart apache2``` and hit enter
     - Test that you have successfully installed LAMP
-      - Copy your instance’s “Public DNS” from the aws console (should look something like “ec2-54-183-158-228.us-west-1.compute.amazonaws.com”)
-      - Paste it into a web browser URL and hit enter, you should be directed to and Apache2 Ubuntu Default Page and prints the message “It works!”, followed by other configuration information
-      - Navigate to “/var/www/html” and replace “index.html” with a new file named “index.php” and paste in this code:
+      - Copy your instance’s ```Public DNS``` from the aws console (should look something like ```ec2-54-183-158-228.us-west-1.compute.amazonaws.com```)
+      - Paste it into a web browser URL and hit enter, you should be directed to and Apache2 Ubuntu Default Page and prints the message ```It works!```, followed by other configuration information
+      - Navigate to ```/var/www/html``` and replace ```index.html``` with a new file named ```index.php``` and paste in this code:
 ```
 <!DOCTYPE html>
 <html>
@@ -123,8 +123,8 @@ echo "Index Page for Apache Server";
 ```
 ## Install phpMyAdmin for MySQL GUI
 1. Install phpMyAdmin for MySQL GUI
-   - Type “sudo apt-get update” on command line and hit enter
-   - Type “sudo apt-get install phpmyadmin” and hit enter
+   - Type ```sudo apt-get update``` on command line and hit enter
+   - Type ```sudo apt-get install phpmyadmin``` and hit enter
       - Type y and press enter when asked if you would like to continue
       - When prompted to choose a web server for reconfiguration, choose apache2 and hit enter
       - When asked whether you would like configure database for phpmyadmin with dbconfig-common, select yes and hit enter
@@ -215,10 +215,10 @@ sudo git clone https://github.com/dnielsen/spoutlet2.git
 </VirtualHost>
 ```
 1. Save and exit
-1. Enable module rewrite by typing “sudo a2enmod rewrite” and hitting enter
-1. Restart apache with “sudo systemctl restart apache2”
+1. Enable module rewrite by typing ```sudo a2enmod rewrite``` and hitting enter
+1. Restart apache with ```sudo systemctl restart apache2```
 1. Open new web page and paste in the public DNS from step 5e, you should be directed to the Spoutlet2 Home Page
-   - For example ec2-13-56-200-209.us-west-1.compute.amazonaws.com
+   - For example ```ec2-13-56-200-209.us-west-1.compute.amazonaws.com```
 
 
       
