@@ -169,17 +169,17 @@ sudo git clone https://github.com/dnielsen/spoutlet2.git
 1. Open and edit the file ```app/AppKernel.php``` in the spoutlet2 directory
    - cd spoutlet2
    - sudo vi app/AppKernel.php
-   - and comment out the line “$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();” by adding two forward slashes in front of it  (“//”)
+   - and comment out the line ```$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();``` by adding two forward slashes in front of it  (```//```)
 1. Update composer
-   - Type “sudo composer install --no-dev --optimize-autoloader” and hit enter, this can take up to a few minutes
+   - Type ```sudo composer install --no-dev --optimize-autoloader``` and hit enter, this can take up to a few minutes
    - For all parameters, leave them blank and hit enter to accept the default, except for these:
-   - For “database_name” enter “Spoutlet”
-   - For “database_password” enter the password you created in step 6b
-   - For “mailer_transport” enter “gmail”
-   - For “mailer_host” enter “smtp.gmail.com”
-   - For “mailer_user” enter a valid gmail email address
-   - For “mailer_password” enter the email address’ respective password
-   - For “secret” enter “afb28c899101d12f6c5074bcef2fc2d0b0fa7084kk”
+   - For ```database_name``` enter ```Spoutlet```
+   - For ```database_password``` enter the password you created earlier
+   - For ```mailer_transport``` enter ```gmail```
+   - For ```mailer_host``` enter ```smtp.gmail.com```
+   - For ```mailer_user``` enter a valid gmail email address
+   - For ```mailer_password``` enter the email address’ respective password
+   - For ```secret``` enter ```afb28c899101d12f6c5074bcef2fc2d0b0fa7084kk```
 1. Ensure MySQL, phpMyAdmin, and Symfony are all communicating correctly by typing “sudo php app/console doctrine:schema:validate” and hitting enter, you should see an output verifying that the mapping and database schema are all correct 
 1. Clear cache by typing ```sudo php app/console cache:clear --env=prod --no-debug``` and hitting enter 
 1. Generate assets with ```sudo php app/console assets:install --env=prod --no-debug```
