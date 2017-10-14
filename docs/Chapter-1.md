@@ -30,9 +30,19 @@ This document provides detailed, step-by-step instructions on creating a new AWS
 1. A pop up window will appear asking about a security key
    - Select “Create a new key pair” from the first drop down box
    - Enter “spoutlet_sampleEC2” for the key pair name, then “Download Key Pair”
-     - IMPORTANT*: after downloading the key, place it in a safe and accessible place (perhaps create a backup copy and store it in the cloud); if lost, your key cannot be replaced, as AWS does not store your key after its creation
+     - IMPORTANT: after downloading the key, place it in a safe and accessible place (perhaps create a backup copy and store it in the cloud); if lost, your key cannot be replaced, as AWS does not store your key after its creation
 1. After storing your key in a safe and secure location, click “Launch Instances”
 ###  Update Folder Permissions
+1. Type “sudo setfacl -R -m u:www-data:rX spoutlet2” and hit enter
+1. Type “sudo setfacl -R -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
+1. Type “ sudo setfacl -dR -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
+1. Type “export SYMFONY_ENV=prod” and hit enter
+###  Update Spoutlet Project Requirements
+1. Open and edit the file “app/AppKernel.php” in the spoutlet2 directory
+```cd spoutlet2
+sudo vi app/AppKernel.php ```
+  - and comment out the line “$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();” by adding two forward slashes in front of it  (“//”)
+1. 
 
 ## Connect* to Instance from AWS console
 1. After launching instance, return to running instances by clicking on “Services” > “EC2”
