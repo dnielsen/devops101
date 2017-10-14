@@ -42,7 +42,7 @@ This document provides detailed, step-by-step instructions on creating a new AWS
 > cd spoutlet2
 > sudo vi app/AppKernel.php
   - and comment out the line “$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();” by adding two forward slashes in front of it  (“//”)
-## Connect* to Instance from AWS console
+## Connect to Instance from AWS console
 1. After launching instance, return to running instances by clicking on “Services” > “EC2”
 1. Click on “Instances”
    - You should see your deployed instance with “Initializing” status under “Status Checks”
@@ -156,7 +156,7 @@ echo "Index Page for Apache Server";
 ``` 
 sudo git clone https://github.com/dnielsen/spoutlet2.git 
 ```
-Enter your github user information to finish cloning the repository
+      - Enter your github user information to finish cloning the repository
    1. After cloning the repository, type “ls” and hit enter, there should now be a “spoutlet2” directory present within /var/www
    1. Navigate into the new project directory by typing “cd spoutlet2” and hitting enter
    1. We will not be needing the “spoutlet2.sql” file, so delete it by typing “sudo rm spoutlet2.sql” and hitting enter
