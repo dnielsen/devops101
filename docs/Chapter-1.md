@@ -130,43 +130,43 @@ echo "Index Page for Apache Server";
       - When asked whether you would like configure database for phpmyadmin with dbconfig-common, select yes and hit enter
       - Create a password for phpmyadmin (Use the same one as your mysql password for root user) and hit enter, then confirm password
    - Allow for apache access to phpmyadmin
-      - Type “sudo vim /etc/apache2/apache2.conf” (or you can use a different text editor if you would like)  and hit enter
-      - At the end of the file, create a new line and type “Include /etc/phpmyadmin/apache.conf”
+      - Type ```sudo vim /etc/apache2/apache2.conf``` (or you can use a different text editor if you would like)  and hit enter
+      - At the end of the file, create a new line and type ```Include /etc/phpmyadmin/apache.conf```
       - Save and exit
-   - Restart apache by typing “sudo systemctl restart apache2”
-   - Test that all is working by returning to the browser page where you tested Apache connection (step 5e), and adding “/phpmyadmin” to the end of the URL.  
-      - For example: http://ec2-13-56-200-209.us-west-1.compute.amazonaws.com/phpmyadmin
+   - Restart apache by typing ```sudo systemctl restart apache2```
+   - Test that all is working by returning to the browser page where you tested Apache connection, and adding ```/phpmyadmin``` to the end of the URL.  
+      - For example: ```http://ec2-13-56-200-209.us-west-1.compute.amazonaws.com/phpmyadmin```
       - You should be redirected to a login page where you can login with username “root” and the password you created in step 6b, then login and you will be able to view a GUI of your MySQL Databases
 1. Import MySQL Database into phpmyadmin
-   - On your phpmyadmin GUI, create a new database and and name it “Spoutlet”
+   - On your phpmyadmin GUI, create a new database and and name it ```Spoutlet```
    - Download   (ftp or with github) the file “spoutlet2.sql” from this drive folder...
  https://drive.google.com/drive/folders/0B_d8yXBizlAEaE9CNXdVWC1nSDg 
    - Return to your phpmyadmin page and open the “Spoutlet” database
    - Click “import”, and then “choose file”
-      - Select the “spoutlet2.sql” file you downloaded and then finish the import by scrolling down and clicking “Go”
+      - Select the ```spoutlet2.sql``` file you downloaded and then finish the import by scrolling down and clicking “Go”
       - Results: Import has been successfully finished, 33 queries executed. (spoutlet2.sql)
-   - Your “Spoutlet” database should now be populated with 6 tables (“comments”, “events”, “fos_user”, “home”, “sessions”, “submission”), each with data in them already
+   - Your ```Spoutlet``` database should now be populated with 6 tables (```comments```, ```events```, ```fos_user```, ```home```, ```sessions```, ```submission```), each with data in them already
    - Return to your terminal window for the next step
 ## Clone Spoutlet Github Repository on Instance  
-   1. Navigate to Apache’s default web page directory by typing “cd /var/www” and pressing enter
+   1. Navigate to Apache’s default web page directory by typing ```cd /var/www``` and pressing enter
    1. Return to the spoutlet2 github repository from step 7b (you will need a github account for the next step, create one if you don’t already have one)
-   1. On the repository, click the green “Clone of download” button and copy the given url
-   1. Return to your terminal window, you should still be navigated into the folder “/var/www”
-      - Type “sudo git clone *copied-url*” and hit enter (*url from step 8c)
+   1. On the repository, click the green ```Clone of download``` button and copy the given url
+   1. Return to your terminal window, you should still be navigated into the folder ```/var/www```
+      - Type ```sudo git clone *copied-url*``` and hit enter (*url from step 8c)
 ``` 
 sudo git clone https://github.com/dnielsen/spoutlet2.git 
 ```
       - Enter your github user information to finish cloning the repository
-   1. After cloning the repository, type “ls” and hit enter, there should now be a “spoutlet2” directory present within /var/www
+   1. After cloning the repository, type ```ls``` and hit enter, there should now be a ```spoutlet2``` directory present within /var/www
    1. Navigate into the new project directory by typing “cd spoutlet2” and hitting enter
-   1. We will not be needing the “spoutlet2.sql” file, so delete it by typing “sudo rm spoutlet2.sql” and hitting enter
+   1. We will not be needing the ```spoutlet2.sql``` file, so delete it by typing ```sudo rm spoutlet2.sql``` and hitting enter
 ## Update Folder Permissions
-1. Type “sudo setfacl -R -m u:www-data:rX spoutlet2” and hit enter
-1. Type “sudo setfacl -R -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
-1. Type “ sudo setfacl -dR -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs” and hit enter
-1. Type “export SYMFONY_ENV=prod” and hit enter
+1. Type ```sudo setfacl -R -m u:www-data:rX spoutlet2``` and hit enter
+1. Type ```sudo setfacl -R -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs``` and hit enter
+1. Type ```sudo setfacl -dR -m u:www-data:rwX spoutlet2/app/cache spoutlet2/app/logs``` and hit enter
+1. Type ```export SYMFONY_ENV=prod``` and hit enter
 ## Update Spoutlet Project Requirements
-1. Open and edit the file “app/AppKernel.php” in the spoutlet2 directory
+1. Open and edit the file ```app/AppKernel.php``` in the spoutlet2 directory
    - cd spoutlet2
    - sudo vi app/AppKernel.php
    - and comment out the line “$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();” by adding two forward slashes in front of it  (“//”)
@@ -181,12 +181,12 @@ sudo git clone https://github.com/dnielsen/spoutlet2.git
    - For “mailer_password” enter the email address’ respective password
    - For “secret” enter “afb28c899101d12f6c5074bcef2fc2d0b0fa7084kk”
 1. Ensure MySQL, phpMyAdmin, and Symfony are all communicating correctly by typing “sudo php app/console doctrine:schema:validate” and hitting enter, you should see an output verifying that the mapping and database schema are all correct 
-1. Clear cache by typing “sudo php app/console cache:clear --env=prod --no-debug” and hitting enter 
-1. Generate assets with “sudo php app/console assets:install --env=prod --no-debug”
+1. Clear cache by typing ```sudo php app/console cache:clear --env=prod --no-debug``` and hitting enter 
+1. Generate assets with ```sudo php app/console assets:install --env=prod --no-debug```
 ## Change Default Apache Path to Spoutlet Web Page
-1. Navigate to apache default path configuration by typing “cd /etc/apache2/sites-available”
-1. Type “sudo mv 000-default.conf default.bkp.conf” and hit enter
-1. Open up a new file by typing “sudo vim 000-default.conf”, then paste in this code:
+1. Navigate to apache default path configuration by typing ```cd /etc/apache2/sites-available```
+1. Type ```sudo mv 000-default.conf default.bkp.conf``` and hit enter
+1. Open up a new file by typing ```sudo vim 000-default.conf```, then paste in this code:
 ```
 <VirtualHost *:80>
 
