@@ -8,10 +8,8 @@ This document provides detailed, step-by-step instructions on creating a new AWS
   - ```AWS Free Tier includes offers that expire 12 months following sign up and others that never expire.```
 
 ## Create AWS EC2 instance
- - Log into AWS console and select ```Services``` > ```EC2```
+1. Log into AWS console and select ```Services``` > ```EC2```
    - Click on ```Instances```
-
-## Launch Instance
 1. Click on ```Launch Instance```
 1. Select ```Ubuntu Server 16.04...```
 1. Select the ```t2.medium size instance``` - VERY IMPORTANT
