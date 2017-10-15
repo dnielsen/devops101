@@ -39,8 +39,8 @@ This document provides detailed, step-by-step instructions on creating a new AWS
 1. Type ```export SYMFONY_ENV=prod``` and hit enter
 ##  Update Spoutlet Project Requirements
 1. Open and edit the file ```app/AppKernel.php``` in the spoutlet2 directory
-> cd spoutlet2
-> sudo vi app/AppKernel.php
+   > cd spoutlet2
+   > sudo vi app/AppKernel.php
    - and comment out the line “$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();” by adding two forward slashes in front of it  (“//”)
 ## Connect to Instance from AWS console
 1. After launching instance, return to running instances by clicking on ```Services``` > ```EC2```
