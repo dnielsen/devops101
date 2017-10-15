@@ -221,15 +221,8 @@ sudo git clone https://github.com/dnielsen/spoutlet2.git
 
 
       
-[Backup](http://bit.ly/2fTJxQ8)
-[Also see ★√DevOps 101 / Cloud workshops at Cloud Camp #document] (http://bit.ly/2uzi3o6)
-
-   
-
-
-
-
-
+- [Backup](http://bit.ly/2fTJxQ8)
+- [Also see ★√DevOps 101 / Cloud workshops at Cloud Camp #document] (http://bit.ly/2uzi3o6)
 
 
 
