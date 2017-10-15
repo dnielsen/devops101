@@ -166,8 +166,8 @@ sudo git clone https://github.com/dnielsen/spoutlet2.git
 1. Type ```export SYMFONY_ENV=prod``` and hit enter
 ## Update Spoutlet Project Requirements
 1. Open and edit the file ```app/AppKernel.php``` in the spoutlet2 directory
-   - cd spoutlet2
-   - sudo vi app/AppKernel.php
+   - Type ```cd spoutlet2```
+   - Type ```sudo vi app/AppKernel.php```
    - and comment out the line ```$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();``` by adding two forward slashes in front of it  (```//```)
 1. Update composer
    - Type ```sudo composer install --no-dev --optimize-autoloader``` and hit enter, this can take up to a few minutes
