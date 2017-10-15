@@ -139,8 +139,7 @@ echo "Index Page for Apache Server";
       - You should be redirected to a login page where you can login with username “root” and the password you created in step 6b, then login and you will be able to view a GUI of your MySQL Databases
 1. Import MySQL Database into phpmyadmin
    - On your phpmyadmin GUI, create a new database and and name it ```Spoutlet```
-   - Download   (ftp or with github) the file “spoutlet2.sql” from this drive folder...
- https://drive.google.com/drive/folders/0B_d8yXBizlAEaE9CNXdVWC1nSDg 
+   - Download   (ftp or with github) the file “spoutlet2.sql” from this [Google Drive folder](https://drive.google.com/drive/folders/0B_d8yXBizlAEaE9CNXdVWC1nSDg)
    - Return to your phpmyadmin page and open the “Spoutlet” database
    - Click “import”, and then “choose file”
       - Select the ```spoutlet2.sql``` file you downloaded and then finish the import by scrolling down and clicking “Go”
