@@ -9,7 +9,7 @@ This document provides detailed, step-by-step instructions on creating a new AWS
 
 ## Create AWS EC2 instance
  - Log into AWS console and select ```Services``` > ```EC2```
- - Click on ```Instances```
+   - Click on ```Instances```
 
 ## Launch Instance
 1. Click on ```Launch Instance```
