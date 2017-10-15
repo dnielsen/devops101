@@ -179,7 +179,7 @@ sudo git clone https://github.com/dnielsen/spoutlet2.git
    - For ```mailer_user``` enter a valid gmail email address
    - For ```mailer_password``` enter the email address’ respective password
    - For ```secret``` enter *```afb28c899101d12f6c5074bcef2fc2d0b0fa7084kk```*
-1. Ensure MySQL, phpMyAdmin, and Symfony are all communicating correctly by typing “sudo php app/console doctrine:schema:validate” and hitting enter, you should see an output verifying that the mapping and database schema are all correct 
+1. Ensure MySQL, phpMyAdmin, and Symfony are all communicating correctly by typing ```sudo php app/console doctrine:schema:validate``` and hitting enter, you should see an output verifying that the mapping and database schema are all correct 
 1. Clear cache by typing ```sudo php app/console cache:clear --env=prod --no-debug``` and hitting enter 
 1. Generate assets with ```sudo php app/console assets:install --env=prod --no-debug```
 ## Change Default Apache Path to Spoutlet Web Page
