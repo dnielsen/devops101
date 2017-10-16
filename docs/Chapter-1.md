@@ -51,14 +51,13 @@ This document provides detailed, step-by-step instructions on creating a new AWS
       - Choose Load. By default, PuTTYgen displays only files with the extension .ppk. To locate your .pem file, select the option to display files of all types. 
       - Select your .pem file for the key pair that you specified when you launch your instance, and then choose                             Open. Choose OK to dismiss the confirmation dialog box.                    
       - Choose Save private key to save the key in the format that PuTTY can use. PuTTYgen displays a warning about saving the key without a passphrase. Choose Yes.
-      - Note
-         - A passphrase on a private key is an extra layer of protection, so even if your private key is discovered, it can't be used without the passphrase. The downside to using a passphrase is that it makes automation harder because human intervention is needed to log on to an instance, or copy files to an instance                    
-        - Specify the same name for the key that you used for the key pair (for example, my-key-pair). PuTTY automatically adds the .ppk file extension. Your private key is now in the correct format for use with PuTTY. You can now connect to your instance using PuTTY's SSH client.
-1. Open a terminal window and navigate into the directory where you placed your ```spoutlet_sampleEC2.pem``` key (downloaded in step 2h)
-   - Add privacy restrictions to your key by typing ```chmod 400 spoutlet_sampleEC2.pem``` on command line and hit enter
-   - Launch virtual machine via ssh by typing ```ssh -i "spoutlet_sampleEC2.pem" ubuntu@*your-instance*.compute.amazonaws.com``` on command line and hit enter . You can copy the above line under ```example``` from the ```Connect to your instance``` pop up window on your aws console and paste it in your terminal
-   - You will be asked if you are sure you want to continue, type “yes” and hit enter
-   - You should now be connected to your EC2 instance via a Virtual Machine in your terminal window (your username in the terminal window should now be ```ubuntu@ip-*your-ip*```   
+      - Note A passphrase on a private key is an extra layer of protection, so even if your private key is discovered, it can't be used without the passphrase. The downside to using a passphrase is that it makes automation harder because human intervention is needed to log on to an instance, or copy files to an instance                    
+       - Specify the same name for the key that you used for the key pair (for example, my-key-pair). PuTTY automatically adds the .ppk file extension. Your private key is now in the correct format for use with PuTTY. You can now connect to your instance using PuTTY's SSH client.
+       - Open a terminal window and navigate into the directory where you placed your ```spoutlet_sampleEC2.pem``` key (downloaded in step 2h)
+       - Add privacy restrictions to your key by typing ```chmod 400 spoutlet_sampleEC2.pem``` on command line and hit enter
+- Launch virtual machine via ssh by typing ```ssh -i "spoutlet_sampleEC2.pem" ubuntu@*your-instance*.compute.amazonaws.com``` on command line and hit enter . You can copy the above line under ```example``` from the ```Connect to your instance``` pop up window on your aws console and paste it in your terminal
+- You will be asked if you are sure you want to continue, type “yes” and hit enter
+- You should now be connected to your EC2 instance via a Virtual Machine in your terminal window (your username in the terminal window should now be ```ubuntu@ip-*your-ip*```   
 ### Install php and composer
 1. Install php and composer
    - Install composer by pasting the following line into your terminal and pressing enter:
@@ -125,6 +124,7 @@ echo "Index Page for Apache Server";
    - Test that all is working by returning to the browser page where you tested Apache connection, and adding ```/phpmyadmin``` to the end of the URL.  
       - For example: ```http://ec2-13-56-200-209.us-west-1.compute.amazonaws.com/phpmyadmin```
       - You should be redirected to a login page where you can login with username ```root``` and the password you created earlier, then login and you will be able to view a GUI of your MySQL Databases
+## Import MySQL Database into phpmyadmin
 1. Import MySQL Database into phpmyadmin
    - On your phpmyadmin GUI, create a new database and and name it ```Spoutlet```
    - Download   (ftp or with github) the file ```spoutlet2.sql``` from this [Google Drive folder](https://drive.google.com/drive/folders/0B_d8yXBizlAEaE9CNXdVWC1nSDg)
