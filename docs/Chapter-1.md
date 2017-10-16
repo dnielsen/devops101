@@ -53,12 +53,12 @@ This document provides detailed, step-by-step instructions on creating a new AWS
       - Choose Save private key to save the key in the format that PuTTY can use. PuTTYgen displays a warning about saving the key without a passphrase. Choose Yes.
       - Note
          - A passphrase on a private key is an extra layer of protection, so even if your private key is discovered, it can't be used without the passphrase. The downside to using a passphrase is that it makes automation harder because human intervention is needed to log on to an instance, or copy files to an instance                    
-       - Specify the same name for the key that you used for the key pair (for example, my-key-pair). PuTTY automatically adds the .ppk file extension. Your private key is now in the correct format for use with PuTTY. You can now connect to your instance using PuTTY's SSH client.
+        - Specify the same name for the key that you used for the key pair (for example, my-key-pair). PuTTY automatically adds the .ppk file extension. Your private key is now in the correct format for use with PuTTY. You can now connect to your instance using PuTTY's SSH client.
 1. Open a terminal window and navigate into the directory where you placed your ```spoutlet_sampleEC2.pem``` key (downloaded in step 2h)
-     - Add privacy restrictions to your key by typing ```chmod 400 spoutlet_sampleEC2.pem``` on command line and hit enter
-     - Launch virtual machine via ssh by typing ```ssh -i "spoutlet_sampleEC2.pem" ubuntu@*your-instance*.compute.amazonaws.com``` on command line and hit enter . You can copy the above line under ```example``` from the ```Connect to your instance``` pop up window on your aws console and paste it in your terminal
-     - You will be asked if you are sure you want to continue, type “yes” and hit enter
-    - You should now be connected to your EC2 instance via a Virtual Machine in your terminal window (your username in the terminal window should now be ```ubuntu@ip-*your-ip*```   
+   - Add privacy restrictions to your key by typing ```chmod 400 spoutlet_sampleEC2.pem``` on command line and hit enter
+   - Launch virtual machine via ssh by typing ```ssh -i "spoutlet_sampleEC2.pem" ubuntu@*your-instance*.compute.amazonaws.com``` on command line and hit enter . You can copy the above line under ```example``` from the ```Connect to your instance``` pop up window on your aws console and paste it in your terminal
+   - You will be asked if you are sure you want to continue, type “yes” and hit enter
+   - You should now be connected to your EC2 instance via a Virtual Machine in your terminal window (your username in the terminal window should now be ```ubuntu@ip-*your-ip*```   
 ### Install php and composer
 1. Install php and composer
    - Install composer by pasting the following line into your terminal and pressing enter:
