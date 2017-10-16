@@ -322,35 +322,20 @@ echo "Index Page for Apache Server";
 
 &lt;VirtualHost *:80&gt;
 
-  
-
     DocumentRoot /var/www/spoutlet2/web
-
     &lt;Directory /var/www/spoutlet2/web&gt;
-
         AllowOverride None
-
         Order Allow,Deny
-
         Allow from All
-
-  
-
         &lt;IfModule mod_rewrite.c&gt;
-
             Options -MultiViews
-
             RewriteEngine On
-
             RewriteCond %{REQUEST_FILENAME} !-f
-
             RewriteRule ^(.*)$ app.php [QSA,L]
-
         &lt;/IfModule&gt;
-
     &lt;/Directory&gt;
 
-  
+
 
     # uncomment the following lines if you install assets as symlinks
 
