@@ -1,22 +1,10 @@
 ★√AWS EC2 Sample Deployment #document [http://bit.ly/2fTJxQ8](http://bit.ly/2fTJxQ8)
 
 - For example [ec2-13-56-200-209.us-west-1.compute.amazonaws.com](http://ec2-13-56-200-209.us-west-1.compute.amazonaws.com) 
-
- 
-
-- Also See  
-    - How do I convert RTF to Markdown 
-        - [convert rich text to Markdown: Mark It Down](http://markitdown.medusis.com/) via website tool [http://markitdown.medusis.com/](http://markitdown.medusis.com/) 
-        - [How to convert RTF to Markdown on the UNIX/OSX command line](https://stackoverflow.com/questions/30448176/how-to-convert-rtf-to-markdown-on-the-unix-osx-command-line-similar-to-pandoc) 
-
-    - [#task](https://keep.google.com/#label/task) learn GitHub syntax and migrate AWS EC2 Sample Deployment ([https://github.com/dnielsen/devops101/blob/master/docs/Chapter-1.md](https://github.com/dnielsen/devops101/blob/master/docs/Chapter-1.md)) to DevOps101 Chapter 1[https://github.com/dnielsen/devops101/blob/master/docs/Chapter-1.md](https://github.com/dnielsen/devops101/blob/master/docs/Chapter-1.md) 
-        - Mastering Markdown[https://guides.github.com/features/mastering-markdown/](https://guides.github.com/features/mastering-markdown/) 
-        - Basic writing and formatting syntax[https://help.github.com/articles/basic-writing-and-formatting-syntax/](https://help.github.com/articles/basic-writing-and-formatting-syntax/) 
-
-    - ★√AWS EC2 Sample Deployment - Lesson plan [https://docs.google.com/presentation/d/14G_WPFcjM7oFFw1ftWA5-BS8-3agVLfGwANIbVo2IYU/edit#slide=id.gc6f919934_0_0](https://docs.google.com/presentation/d/14G_WPFcjM7oFFw1ftWA5-BS8-3agVLfGwANIbVo2IYU/edit#slide=id.gc6f919934_0_0) 
-    - ★√AWS Resources #document [http://bit.ly/2wPuBp1](http://bit.ly/2wPuBp1) 
-    - #DevOps 101 - Cloud workshops from Cloud Camp #folder  [https://drive.google.com/drive/folders/0B1haVZnrKolXNmNFVU1fNFY5VDg](https://drive.google.com/drive/folders/0B1haVZnrKolXNmNFVU1fNFY5VDg) 
-    - ★√DevOps 101 / Cloud workshops at Cloud Camp #document [http://bit.ly/2uzi3o6](http://bit.ly/2uzi3o6) 
+## Also see
+- ★√AWS Resources #document [http://bit.ly/2wPuBp1](http://bit.ly/2wPuBp1) 
+- #DevOps 101 - Cloud workshops from Cloud Camp #folder  [https://drive.google.com/drive/folders/0B1haVZnrKolXNmNFVU1fNFY5VDg](https://drive.google.com/drive/folders/0B1haVZnrKolXNmNFVU1fNFY5VDg) 
+- ★√DevOps 101 / Cloud workshops at Cloud Camp #document [http://bit.ly/2uzi3o6](http://bit.ly/2uzi3o6) 
 
  
 
