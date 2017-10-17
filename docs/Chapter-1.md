@@ -305,24 +305,32 @@ echo "Index Page for Apache Server";
   
 
 ```     
-<!DOCTYPE html>
-<html>
-<head>
-        <title>Index</title>
-</head>
-<body>
-        <h1>Index</h1>
-</body>
-</html>
+<VirtualHost *:80>
 
-<?php
+    DocumentRoot /var/www/spoutlet2/web
+    <Directory /var/www/spoutlet2/web>
+        AllowOverride None
+        Order Allow,Deny
+        Allow from All
 
-echo "Index Page for Apache Server";
+        <IfModule mod_rewrite.c>
+            Options -MultiViews
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^(.*)$ app.php [QSA,L]
+        </IfModule>
+    </Directory>
 
-?>
+    # uncomment the following lines if you install assets as symlinks
+    # or run into problems when compiling LESS/Sass/CoffeScript assets
+    # <Directory /var/www/project>
+    #     Options FollowSymlinks
+    # </Directory>
+
+    ErrorLog /var/log/apache2/symfony_error.log
+    CustomLog /var/log/apache2/symfony_access.log combined
+</VirtualHost>
 ```
-  
-
 - d) Save and exit 
 - e) Enable module rewrite by typing “sudo a2enmod rewrite” and hitting enter 
 - f) Restart apache with “sudo systemctl restart apache2” 
