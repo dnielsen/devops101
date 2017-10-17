@@ -45,7 +45,7 @@ This document provides detailed, step-by-step instructions on creating a new AWS
 
  
 
-### 3. Connect* to Instance from AWS console
+### 3. Connect to Instance from AWS console
 
 - a) After launching instance, return to running instances by clicking on “Services” &gt; “EC2” 
 - b) Click on “Instances” 
