@@ -57,13 +57,6 @@ This document provides detailed, step-by-step instructions on creating a new AWS
  
 
 ### 4. Connect to Instance from Terminal
-
-- #folder[https://drive.google.com/drive/folders/0B1haVZnrKolXNmNFVU1fNFY5VDg](https://drive.google.com/drive/folders/0B1haVZnrKolXNmNFVU1fNFY5VDg) 
-
- 
-
-★√Connect to★√Connect to the instance (via Terminal or PuTTY) [https://docs.google.com/document/d/1U3MU69XAcfXExZrflWlPmpLi-BMLhgWqyuKiCib7sGQ/edit?usp=sharing](https://docs.google.com/document/d/1U3MU69XAcfXExZrflWlPmpLi-BMLhgWqyuKiCib7sGQ/edit?usp=sharing)  
-
  
 
 - With Terminal  / MacOS, From Termnal:  
