@@ -195,39 +195,23 @@ This document provides detailed, step-by-step instructions on creating a new AWS
 
 - f) Navigate to “/var/www/html” and replace “index.html” with a new file named “index.php” and paste in this code: 
   
+```
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Index</title>
+</head>
+<body>
+        <h1>Index</h1>
+</body>
+</html>
 
-&lt;!DOCTYPE html&gt;
-
-&lt;html&gt;
-
-&lt;head&gt;
-
-        &lt;title&gt;Index&lt;/title&gt;
-
-&lt;/head&gt;
-
-&lt;body&gt;
-
-        &lt;h1&gt;Index&lt;/h1&gt;
-
-&lt;/body&gt;
-
-&lt;/html&gt;
-
-  
-
-&lt;?php
-
-  
+<?php
 
 echo "Index Page for Apache Server";
 
-  
-
-?&gt;
-
- 
-
+?>
+```
 ### 6. Install phpMyAdmin for MySQL GUI
 
 - a) Type “sudo apt-get update” on command line and hit enter 
