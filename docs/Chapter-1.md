@@ -88,10 +88,9 @@ To convert your key from Public to Private (ppk to pem)
 
 1. Start PuTTYgen (for example, from the Start menu,  
 2. choose All Programs &gt; PuTTY &gt; PuTTYgen).             
-3. Under Type of key to generate, choose                             RSA.                     
-4.                                                                                                  
-5. If you're using an older version of PuTTYgen, choose SSH-2                             RSA.                     
-6. Choose Load. By default, PuTTYgen displays only                         files with the extension .ppk. To locate your                             .pem file, select the option to display files of                         all types.                     
+3. Under Type of key to generate, choose                             RSA.                                                                                                                     
+4. If you're using an older version of PuTTYgen, choose SSH-2                             RSA.                     
+5. Choose Load. By default, PuTTYgen displays only                         files with the extension .ppk. To locate your                             .pem file, select the option to display files of                         all types.                     
 
                                                                                                                         
 
@@ -121,9 +120,6 @@ To convert your key from Public to Private (ppk to pem)
     - sudo apt-get install php  
     - sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer 
 
-  
-
- 
 
 ### 5. Install Apache, MySQL, PHP on your Linux instance
 
