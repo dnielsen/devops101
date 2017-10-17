@@ -165,37 +165,22 @@ To convert your key from Public to Private (ppk to pem)
 - f) Navigate to “/var/www/html” and replace “index.html” with a new file named “index.php” and paste in this code: 
   
 
-&lt;!DOCTYPE html&gt;
+```<!DOCTYPE html>
+<html>
+<head>
+        <title>Index</title>
+</head>
+<body>
+        <h1>Index</h1>
+</body>
+</html>
 
-&lt;html&gt;
-
-&lt;head&gt;
-
-        &lt;title&gt;Index&lt;/title&gt;
-
-&lt;/head&gt;
-
-&lt;body&gt;
-
-        &lt;h1&gt;Index&lt;/h1&gt;
-
-&lt;/body&gt;
-
-&lt;/html&gt;
-
-  
-
-&lt;?php
-
-  
+<?php
 
 echo "Index Page for Apache Server";
 
-  
-
-?&gt;
-
- 
+?>
+```
 
 ### 6. Install phpMyAdmin for MySQL GUI
 
