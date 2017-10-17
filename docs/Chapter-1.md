@@ -320,52 +320,23 @@ echo "Index Page for Apache Server";
 - c) Open up a new file by typing “sudo vim 000-default.conf”, then paste in this code: 
   
 
-&lt;VirtualHost *:80&gt;
+```     
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Index</title>
+</head>
+<body>
+        <h1>Index</h1>
+</body>
+</html>
 
-    DocumentRoot /var/www/spoutlet2/web
- 
-    &lt;Directory /var/www/spoutlet2/web&gt;
+<?php
 
-        AllowOverride None
+echo "Index Page for Apache Server";
 
-        Order Allow,Deny
-
-        Allow from All
-   
-        &lt;IfModule mod_rewrite.c&gt;
-        
-        Options -MultiViews
-        
-        RewriteEngine On
-        
-        RewriteCond %{REQUEST_FILENAME} !-f
-        
-        RewriteRule ^(.*)$ app.php [QSA,L]
-        
-        &lt;/IfModule&gt;
-    
-    &lt;/Directory&gt;
-
-
-
-    # uncomment the following lines if you install assets as symlinks
-
-    # or run into problems when compiling LESS/Sass/CoffeScript assets
-
-    # &lt;Directory /var/www/project&gt;
-
-    #     Options FollowSymlinks
-
-    # &lt;/Directory&gt;
-
-  
-
-    ErrorLog /var/log/apache2/symfony_error.log
-
-    CustomLog /var/log/apache2/symfony_access.log combined
-
-&lt;/VirtualHost&gt;
-
+?>
+```
   
 
 - d) Save and exit 
