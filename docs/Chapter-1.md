@@ -2,6 +2,7 @@
 - [DevOps Workshop Community](https://groups.google.com/forum/#!forum/devopsworkshop)
 - [Intro to DevOps app deployment 
  Tue Oct 17 2017 6:30-8:30PM Hacker Dojo](https://github.com/erich13/intro/wiki)
+ - [Console](http://console.aws.amazon.com) 
 
 ### 0. Introduction
 
