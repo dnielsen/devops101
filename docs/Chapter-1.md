@@ -195,7 +195,7 @@ echo "Index Page for Apache Server";
 - a) On your phpmyadmin GUI, create a new database and and name it “Spoutlet” 
 - b) Download   (ftp or with github) the file “spoutlet2.sql” from this drive folder... 
 
-[https://drive.google.com/drive/folders/0B_d8yXBizlAEaE9CNXdVWC1nSDg](https://drive.google.com/drive/folders/0B_d8yXBizlAEaE9CNXdVWC1nSDg)
+[https://drive.google.com/drive/folders/0B1haVZnrKolXTktkREZGeFZtY00?usp=sharing](https://drive.google.com/drive/folders/0B1haVZnrKolXTktkREZGeFZtY00?usp=sharing)
 
 - c) Return to your phpmyadmin page and open the “Spoutlet” database 
 - d) Click “import”, and then “choose file” 
