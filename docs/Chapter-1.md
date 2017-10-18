@@ -1,9 +1,13 @@
+## Also see
+- [DevOps Workshop Community] (https://groups.google.com/forum/#!forum/devopsworkshop )
+- [Intro to DevOps app deployment 
+ Tue Oct 17 2017 6:30-8:30PM Hacker Dojo] (https://github.com/erich13/intro/wiki)
+
 ### 0. Introduction
 
 This document provides detailed, step-by-step instructions on creating a new AWS EC2 instance and deploying a provided Symfony2 application on it using LAMP (Linux, Apache, MySQL, PHP) stack. The application also uses a separate Redis database for certain parts of it, but the connection to Redis is not included in these instructions. These instructions are detailed for use with Mac OS; however, once logged onto the virtual machine provided by your EC2, the instructions are universal. The provided application is a website call “Spoutlet” and it will be cloned from an online github repository.
 
-[Intro to DevOps app deployment 
- Tue Oct 17 2017 6:30-8:30PM Hacker Dojo] (https://github.com/erich13/intro/wiki)
+
 
 ### 1.0 Sign up for AWS Free Tier 
 
